@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>LUMPSUM caluculator-20ITR098</title>
+</head>
+<body  onload="fun()">
+    <div class="container"  onmouseover="fun()">
+        <div class="h1 mt-4"  style="font-family:cursive;">
+            LUMPSUM CALCULATOR
+        </div>
+        <div class="card ml-3" style="max-width: 1340px;">
+          <div class="container">
+            <div class="row g-0 ">
+                <div class="col-md-7 ml-5">
+                    <div class="row mt-5">
+                        <div class="col-sm-6 ml-5 ">
+                          <input type="radio" class="form-check-input" name="ra" id="r1" value="1" onchange="f1()" checked><label for="r1" style="padding-right: 26px;" style="padding-left: 9px;"> I want to invest</label>
+                        </div>
+                        <div class="col-sm-6"><input type="radio"  class="form-check-input" name="ra" id="r2" onchange="f2()" > I know my goal<br><br></div>
+                    </div>
+                   
+                   
+     
+                  <div class="row mt-3"  id="in1" >
+                      <div class="row">
+                        <div class="col-sm-8"><label class="form-label" for="pr">I wish to invest</label></div>
+                        <div class="col-sm-4">
+                            <table class="table-dark text-dark table-bordered text-center " style="width: 100px;"><tr><td id="func11"></td></tr></table>
+                        </div>
+
+                      </div>
+
+                             <div class="row">
+                                 <div class="col-sm-12"><input type="range" class="form-range"  id="pr" min="10000" max="10000000"  onchange="fun()"></div>
+                             </div>
+                             <div class="row">
+                                 <div class="col-sm-11">10K</div>
+                                 <div class="col-sm-1">1Cr</div>
+                             </div>
+                  </div>
+                  <div class="row  mt-3" id="in2" style="display: none;">
+                    <div class="row">
+                        <div class="col-sm-8"><label class="form-label" for="pr2" >I need Rs.</label></div>
+                        <div class="col-sm-4">
+                            <table class="table-dark text-dark table-bordered text-center " style="width: 100px;"><tr><td id="func12"></td></tr></table>
+                        </div>
+                    </div>
+                      <div class="row">
+                          <div class="col-sm-12">
+                       <input type="range" class="form-range" id="pr2" min="50000" max="50000000"onchange="fun()">
+                          </div>
+                          <div class="row">
+                              <div class="col-sm-11">50K</div>
+                              <div class="col-sm-1">5Cr</div>
+                              
+                          </div>
+                      </div>
+                          
+                  </div>
+                  
+                  <div class="row mt-5">
+                      <div class="col-sm-8"><label class="form-label" for="year">No.of Years</label></div>
+                      <div class="col-sm-4">
+                          <table class="table-dark text-dark table-bordered text-center " style="width: 100px;"><tr><td id="va2"></td></tr></table>
+                      </div>
+                  </div>
+                  <input type="range" class="form-range"  id="year" min="1" max="30" onchange="fun()">
+                  <div class="row">
+                      <div class="col-sm-10">1 Year</div>
+                      <div class="col-sm-2">30 Years</div>
+                  </div>
+                  <div class="row  mt-5">
+                      <div class="col-sm-8"><label class="form-label" for="rate">Excpted rate of return</label></div>
+                      <div class="col-sm-4">
+                          <table class="table-dark text-dark table-bordered text-center " style="width: 100px;"><tr><td id="va3"></td></tr></table>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-sm-12">
+                          <input type="range" class="form-range"  id="rate" min="8" max="15" onchange="fun()" onchange="fun1()">
+                      </div>
+                      <div class="row">
+                          <div class="col-sm-10">8 %</div>
+                          <div class="col-sm-2">15%</div>
+                      </div>
+                  </div><br><br><br>
+                  <a href="#">view disclaimer</a><br><br><br>
+                  
+                </div>
+                <div class="col-md-5 bg-light pt-5"  id="inn1">
+                  <div class="card-body text-center mt-4">
+                      <h2>Invested Amount</h2>
+                      <h3 id="result1"  style="color: red;"></h3>
+                      <h2>Resultant Amount</h2>
+                      <h3 id="result"  style="color: red;"></h3>
+                      <button type="button"  class="btn btn-primary mt-4" onclick="fun()">Invest now !</button>
+                  </div>
+                </div>
+                <div class="col-md-5 bg-light pt-5 "  style="display: none;" id="inn2">
+                  <div class="card-body text-center mt-5">
+                      <h2>Investment Required</h2>
+                      <h3 id="result2"  style="color: red;"></h3>
+                      <button type="button"  class="btn btn-primary mt-4" onclick="fun()">Invest now !</button>
+                  </div>
+                </div>
+              </div>
+          </div>
+          </div>
+    </div>
+    <script>
+        function f1(){
+            
+                document.getElementById("in2").style.display="none";
+                document.getElementById("in1").style.display="block";
+                document.getElementById("inn2").style.display="none";
+                document.getElementById("inn1").style.display="block";     
+        }
+        function f2(){
+            document.getElementById("r1").value=0;
+                document.getElementById("in1").style.display="none";
+                document.getElementById("in2").style.display="block";
+                document.getElementById("inn1").style.display="none";
+                document.getElementById("inn2").style.display="block"; 
+        }
+        function fun(){
+            let n=2;
+            let r=parseFloat(document.getElementById("rate").value);
+            let t=parseFloat(document.getElementById("year").value);
+            document.getElementById("va2").innerHTML=t+" years";
+            document.getElementById("va3").innerHTML=r+"%"; 
+           if(document.getElementById("r1").value==1){
+               //alert("hi");
+                let p=parseInt(document.getElementById("pr").value);
+                document.getElementById("func11").innerHTML="Rs."+p;
+                document.getElementById("result1").innerHTML='₹ '+p;
+                let a=p*((1+(r/2))**(2/t));
+                document.getElementById("result").innerHTML='₹ '+parseInt(a);
+           }
+           else{
+
+              let a=parseInt(document.getElementById("pr2").value);
+              document.getElementById("func12").innerHTML="Rs."+a;
+              let p=a/((1+(r/2))**(2/t));
+              document.getElementById("result2").innerHTML='₹'+parseInt(p);
+
+}
+            
+            
+
+        }
+
+    </script>
+</body>
+</html>
